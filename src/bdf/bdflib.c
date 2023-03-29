@@ -1796,7 +1796,7 @@
       if ( bdf_get_font_property( p->font, "FONT_ASCENT" ) == 0 )
       {
         p->font->font_ascent = p->font->bbx.ascent;
-        ft_sprintf( nbuf, "%hd", p->font->bbx.ascent );
+        ft_snprintf( nbuf, 128, "%hd", p->font->bbx.ascent );
         error = bdf_add_property_( p->font, "FONT_ASCENT",
                                    nbuf, lineno );
         if ( error )
@@ -1808,7 +1808,7 @@
       if ( bdf_get_font_property( p->font, "FONT_DESCENT" ) == 0 )
       {
         p->font->font_descent = p->font->bbx.descent;
-        ft_sprintf( nbuf, "%hd", p->font->bbx.descent );
+        ft_snprintf( nbuf, 128, "%hd", p->font->bbx.descent );
         error = bdf_add_property_( p->font, "FONT_DESCENT",
                                    nbuf, lineno );
         if ( error )
@@ -2130,7 +2130,7 @@
       /* Add the two standard X11 properties which are required */
       /* for compiling fonts.                                   */
       p->font->font_ascent = p->font->bbx.ascent;
-      ft_sprintf( nbuf, "%hd", p->font->bbx.ascent );
+      ft_snprintf( nbuf, 128, "%hd", p->font->bbx.ascent );
       error = bdf_add_property_( p->font, "FONT_ASCENT",
                                  nbuf, lineno );
       if ( error )
@@ -2138,7 +2138,7 @@
       FT_TRACE2(( "bdf_parse_properties_: " ACMSG1, p->font->bbx.ascent ));
 
       p->font->font_descent = p->font->bbx.descent;
-      ft_sprintf( nbuf, "%hd", p->font->bbx.descent );
+      ft_snprintf( nbuf, 128, "%hd", p->font->bbx.descent );
       error = bdf_add_property_( p->font, "FONT_DESCENT",
                                  nbuf, lineno );
       if ( error )

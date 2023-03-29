@@ -330,7 +330,7 @@
       p[2] = '\0';
     }
     else
-      ft_sprintf( p, "%d", idx );
+      ft_snprintf( p, 3, "%d", idx );
 
     return p;
   }
